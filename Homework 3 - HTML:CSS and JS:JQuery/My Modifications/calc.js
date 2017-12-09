@@ -46,15 +46,15 @@ function setEqualsButtonFunctionality() {
     if(!firstOperand) {
       readyForNextInput();
     }
-    else if(!secondOperand){
+    else if(numbersHaveBeenEntered){
       setSecondOperand();
-      evaluateExpression();
-      setFirstOperand();
+      evaluateExpression()
+      setFirstOperand()
       readyForNextInput();
     }
     else {
-      evaluateExpression()
-      setFirstOperand()
+      setFirstOperand();
+      evaluateExpression();
       readyForNextInput();
     }
   });
@@ -128,7 +128,8 @@ function setClearOption() {
   });
 };
 
+// For Debugging
 
-function debug() {
-  $("#output").text("First operand = " + firstOperand + ", Second Operand = " + secondOperand + ", Last Operator = " + lastOperator + ", Number to Display = " + numberToDisplay + ", Numbers Entered = " + numbersHaveBeenEntered);
-}
+// function debug() {
+//   $("#output").text("First operand = " + firstOperand + ", Second Operand = " + secondOperand + ", Last Operator = " + lastOperator + ", Number to Display = " + numberToDisplay + ", Numbers Entered = " + numbersHaveBeenEntered);
+// }
