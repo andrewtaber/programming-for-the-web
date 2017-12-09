@@ -43,16 +43,13 @@ function setOperatorFunctions() {
 
 function setEqualsButtonFunctionality() {
   $("#equalsButton").click(function(){
-    if(!firstOperand) {
-      readyForNextInput();
-    }
-    else if(numbersHaveBeenEntered){
+    if(numbersHaveBeenEntered && lastOperator){
       setSecondOperand();
       evaluateExpression()
       setFirstOperand()
       readyForNextInput();
     }
-    else {
+    else if(lastOperator){
       setFirstOperand();
       evaluateExpression();
       readyForNextInput();
