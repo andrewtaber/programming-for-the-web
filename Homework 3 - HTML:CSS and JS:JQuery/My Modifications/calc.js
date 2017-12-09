@@ -57,28 +57,6 @@ function setEqualsButtonFunctionality() {
   });
 }
 
-function calculate() {
-  var value;
-
-  switch(lastOperator){
-    case PLUS:
-      value = Number(firstOperand) + Number(secondOperand);
-      break;
-    case MINUS:
-      value = Number(firstOperand) - Number(secondOperand);
-      break;
-    case DIVIDE:
-      value = Number(firstOperand) / Number(secondOperand);
-      break;
-    case TIMES:
-      value = Number(firstOperand) * Number(secondOperand);
-      break;
-  }
-
-  return value; //Rename later
-
-}
-
 function displayNumbersPressed() {
   $(".number-btn").click(function(){
     $("#display").val(numberToDisplay);
@@ -112,6 +90,28 @@ function trackOperatorChoice(operatorPressed) {
 
 function evaluateExpression() {
   $("#display").val(calculate());
+}
+
+function calculate() {
+  var value;
+
+  switch(lastOperator){
+    case PLUS:
+      value = Number(firstOperand) + Number(secondOperand);
+      break;
+    case MINUS:
+      value = Number(firstOperand) - Number(secondOperand);
+      break;
+    case DIVIDE:
+      value = Number(firstOperand) / Number(secondOperand);
+      break;
+    case TIMES:
+      value = Number(firstOperand) * Number(secondOperand);
+      break;
+  }
+
+  return value; //Rename later
+
 }
 
 function setClearOption() {
